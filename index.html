@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Erfbelasting</title>
+  </head>
+  <body>
+    <main>
+      <form action="#">
+        <fieldset id="vraag-1">
+          <h2>Gegevens van de overledene</h2>
+          <h3>Vul hier de gegevens in van de overledene.</h3>
+
+          <!-- vraag 1a -->
+          <fieldset>
+            <legend>1a</legend>
+            <fieldset>
+              <label for="1a-1-1">
+                Voorletter(s), tussen- voegsel(s) en achternaam
+                <input type="text" id="1a-1-1" />
+              </label>
+              <label for="1a-1-2">
+                <input type="text" id="1a-1-2" />
+              </label>
+              <label for="1a-1-3">
+                <input type="text" id="1a-1-3" />
+              </label>
+            </fieldset>
+            <label for="1a-2">
+              Burgerservicenummer overledene
+              <input type="number" id="1a-2" />
+            </label>
+            <label for="1a-3">
+              Overlijdensdatum
+              <input type="date" id="1a-3" />
+            </label>
+          </fieldset>
+
+          <!-- vraag 1b -->
+          <fieldset>
+            <legend>1b</legend>
+            <div>
+              <label>
+                Was de overledene getrouwd of had de overledene een
+                geregistreerd partner op het moment van overlijden?
+              </label>
+              <label for="1b-1-nee">
+                Nee. Ga verder met vraag 1c.
+                <input type="radio" id="1b-1-nee" name="1b-1" />
+              </label>
+              <label for="1b-1-ja">
+                Ja
+                <input type="radio" id="1b-1-ja" name="1b-1" />
+              </label>
+            </div>
+
+            <div>
+              <label>
+                Hadden de overledene en diens echtgenoot of geregistreerd
+                partner huwelijkse of partner­ schapsvoorwaarden laten vast­
+                leggen in een notariële akte?
+              </label>
+              <label for="1b-2-nee">
+                Nee
+                <input type="radio" id="1b-2-nee" name="1b-2" />
+              </label>
+              <label for="">
+                Ja. Stuur een kopie van de akte mee met de aangifte.
+                <input type="radio" id="1b-2-ja" name="1b-2" />
+              </label>
+            </div>
+
+            <div>
+              <label>
+                Hadden de overledene en diens partner een finaal verrekenbeding?
+              </label>
+              <label for="1b-3">
+                Nee
+                <input type="radio" id="1b-3-nee" name="1b-3" />
+              </label>
+              <label for="">
+                Ja
+                <input type="radio" id="1b-3-ja" name="1b-3" />
+              </label>
+            </div>
+
+            <div>
+              <label>Datum huwelijkse of partnerschapsvoorwaarden</label>
+              <input type="date" />
+            </div>
+          </fieldset>
+
+          <!-- vraag 1c -->
+          <fieldset>
+            <legend>1c</legend>
+            <div>
+              <label>Had de overledene kinderen?</label>
+              <label for="1c-1-nee">
+                Nee. Ga verder met vraag 1d.
+                <input type="radio" id="1c-1-nee" name="1c-1" />
+              </label>
+              <label for="1c-1-ja">
+                Ja
+                <input type="radio" id="1c-1-ja" name="1c-1" />
+              </label>
+            </div>
+
+            <div>
+              <label>
+                Is 1 van deze kinderen eerder overleden dan de overledene voor
+                wie u nu aangifte doet?
+              </label>
+              <label for="1c-2-nee">
+                Nee. Ga verder met vraag 1d.
+                <input type="radio" id="1c-2-nee" name="1c-2" />
+              </label>
+              <label for="1c-2-ja">
+                Ja
+                <input type="radio" id="1c-2-ja" name="1c-2" />
+              </label>
+            </div>
+
+            <div>
+              <label>Had dit overleden kind zelf kinderen?</label>
+              <label for="1c-3-nee">
+                Nee
+                <input type="radio" id="1c-3-nee" name="1c-3" />
+              </label>
+              <label for="1c-3-ja">
+                Ja
+                <input type="radio" id="1c-3-ja" name="1c-3" />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>1d</legend>
+            <div>
+              <label>Had de overledene een testament?</label>
+              <label for="1d-1-nee">
+                Nee. Ga verder met vraag 2.
+                <input type="radio" id="1d-1-nee" name="1d-1" />
+              </label>
+              <label for="1d-1-ja">
+                Ja. Vul de gegevens in van de notaris die het testament heeft
+                opgemaakt en de datum van het testament.
+                <input type="radio" id="1d-1-ja" name="1d-1" />
+              </label>
+              <!-- alleen shown als ja -->
+              <div>
+                <label for="">
+                  Protocolnummer notaris
+                  <input type="number" id="1d-2" />
+                </label>
+                <fieldset>
+                  <label for="1d-3-1">
+                    Voorletter(s), tussen- voegsel(s) en achternaam
+                    <input type="text" id="1d-3-1" />
+                  </label>
+                  <label for="1d-3-2">
+                    <input type="text" id="1d-3-2" />
+                  </label>
+                  <label for="1d-3-3">
+                    <input type="text" id="1d-3-3" />
+                  </label>
+                </fieldset>
+                <label for="1d-4">
+                  Vestigingsplaats
+                  <input type="text" id="1d-4" />
+                </label>
+                <label for="1d-5">
+                  Datum van het testament of van de laatste wijziging
+                  <input type="date" id="1d-5" />
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

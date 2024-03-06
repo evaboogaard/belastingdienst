@@ -1,0 +1,16 @@
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+label:has(input[type='text']) {
+}
+
+label:has(input[type='date']) {
+}
+
+label:has(input[type='radio']) {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+}
