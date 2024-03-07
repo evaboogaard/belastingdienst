@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@font-face {
+  font-family: 'rijksoverheid';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/rijksoverheidsansheading-bold.ttf');
+}
+
+@font-face {
+  font-family: 'rijksoverheid';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/rijksoverheidsanstext-regular.ttf');
+}
+
+@font-face {
+  font-family: 'rijksoverheid';
+  font-style: italic;
+  font-weight: 300;
+  src: url('../assets/rijksoverheidserif-italic.ttf');
+}
+
+:root {
+  --primary-color: #09477d;
+  --secondary-color: #7ebde4;
+  --tertiary-color: #e8f5f8;
+  --button-primary-color: #0c548a;
+  --background-color: #e9e8e9;
+
+  --font-size-base: 1rem;
+  --font-size-small: 0.9rem;
+  --font-size-big: 1.2rem;
+  --font-size-bigger: 1.5rem;
+
+  --font-size-h2: 1.8rem;
+  --font-size-h3: 1.25rem;
+}
+
+body {
+  font-family: 'rijksoverheid', sans-serif;
+}
+
+main {
+  background-color: var(--background-color);
+  padding-top: 0.5rem;
+}
+
+input[type='radio'] {
+  opacity: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+form {
+  background-color: white;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+input:not([type='radio']) {
+  font-size: var(--font-size-base);
+  height: 2rem;
+  border-radius: 0;
+  border: 1px solid var(--primary-color);
+
+  &:focus {
+    outline: 2px solid var(--secondary-color);
+  }
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
