@@ -1,5 +1,5 @@
 form {
-  margin: 12% 2%;
+  margin: 12% 2% 0 2%;
 }
 
 label {
@@ -88,4 +88,8 @@ label:has(input[type='radio']:checked)::after {
 
 .address input[type='number'] {
   width: 5rem;
+}
+
+.order-1 {
+  order: -1;
 }

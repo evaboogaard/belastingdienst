@@ -35,13 +35,7 @@
             </fieldset>
             <label for="1a-2">
               Burgerservicenummer overledene
-              <input
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]"
-                id="1a-2"
-                required
-              />
+              <input type="number" id="1a-2" required />
             </label>
             <label for="1a-3">
               Overlijdensdatum
@@ -284,9 +278,11 @@
             <fieldset class="address">
               <legend>Adres in Nederland</legend>
               <label for="2b-4-ja">
+                Ja
                 <input type="radio" id="2b-4-ja" name="2b-4-ja-nee" />
               </label>
               <label for="2b-4-nee">
+                Nee
                 <input type="radio" id="2b-4-nee" name="2b-4-ja-nee" />
               </label>
 
@@ -319,9 +315,11 @@
             <fieldset class="address">
               <legend>Adres in het Buitenland</legend>
               <label for="2b-6-ja">
+                Ja
                 <input type="radio" id="2b-6-ja" name="2b-6-ja-nee" />
               </label>
               <label for="2b-6-nee">
+                Nee
                 <input type="radio" id="2b-6-nee" name="2b-6-ja-nee" />
               </label>
 
@@ -384,7 +382,7 @@
               <label for="3a-1-1">
                 Ik ben executeur en doe aangifte voor alle personen en/of
                 instellingen die iets krijgen uit de nalatenschap (verkrijgers).
-                <i>
+                <i class="order-1">
                   Geef aan voor hoeveel verkrijgers u aangifte doet. Bent u zelf
                   ook verkrijger? Tel uzelf dan ook mee.
                 </i>
@@ -412,7 +410,7 @@
                 Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor
                 meerdere personen en/of instellingen die iets krijgen uit de
                 nalatenschap (verkrijgers).
-                <i>
+                <i class="order-1">
                   Geef aan voor hoeveel verkrijgers u aangifte doet. Tel uzelf
                   ook mee.
                 </i>
@@ -432,7 +430,7 @@
             <div class="md-flex-row">
               <label for="3a-3-1">
                 Ik ben erfgenaam en doe samen met andere erfgenamen aangifte.
-                <i>
+                <i class="order-1">
                   Geef het aantal personen en/of instellingen aan die iets
                   krijgen uit de nalatenschap (verkrijgers). Tel uzelf ook mee.
                 </i>
