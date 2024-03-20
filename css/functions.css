@@ -1,0 +1,11 @@
+.hideable {
+  display: block;
+}
+
+label:has(.vervolg:not(:checked)) ~ .hideable {
+  display: none;
+}
+
+.remove {
+  display: none;
+}

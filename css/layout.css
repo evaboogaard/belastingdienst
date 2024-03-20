@@ -2,35 +2,66 @@ form {
   margin: 12% 2% 0 2%;
 }
 
-label {
+nav ol {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem 0;
 }
 
-label:has(input[type='text']) {
+nav ol li a {
+  display: grid;
+  place-items: center;
+  background-color: var(--secondary-color);
+  aspect-ratio: 1;
+  width: 3rem;
+  border-radius: 50%;
+  transition: var(--transition-base);
+  font-weight: bold;
+}
+
+nav ol li a:hover {
+  opacity: 0.5;
+}
+
+label:not(:has(input[type='radio'])) {
   display: flex;
   flex-direction: column;
-  max-width: 30ch;
+  max-width: var(--input-length);
 }
 
 label:has(input[type='radio']) {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: start;
   cursor: pointer;
   gap: 1rem;
 }
 
-label:has(input[type='radio'])::after {
+label:has(input[type='radio']),
+label:has(input[type='file']) {
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+label:has(input[type='radio'])::before {
   content: '';
-  min-width: 1rem;
+  display: block;
+  width: 1rem;
   height: 1rem;
   background-color: white;
   border: 1px solid black;
 }
 
-label:has(input[type='radio']:checked)::after {
+label:has(input[type='radio']:checked)::before {
   background-color: black;
+}
+
+input[type='file'] {
+  padding: 0.3rem;
+  border: none;
+  width: 40ch;
 }
 
 .name label:nth-of-type(2) {
@@ -47,6 +78,12 @@ label:has(input[type='radio']:checked)::after {
   }
 }
 
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 /* hele vraag */
 .hele-vraag {
   border: 0;
@@ -61,7 +98,7 @@ label:has(input[type='radio']:checked)::after {
     font-size: var(--font-size-bigger);
     width: 2.2rem;
     height: 2.2rem;
-    transform: translateY(-150%);
+    transform: translateY(40%);
   }
 
   > fieldset {
@@ -92,4 +129,8 @@ label:has(input[type='radio']:checked)::after {
 
 .order-1 {
   order: -1;
+}
+
+#2b-5-1 {
+  text-transform: uppercase;
 }

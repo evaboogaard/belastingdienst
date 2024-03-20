@@ -1,0 +1,58 @@
+:user-valid {
+  outline: var(--valid-color) solid 2px;
+}
+
+label:has(:user-valid):not(:has(input[type='radio']))::before {
+  content: '✓';
+  position: absolute;
+  color: var(--valid-color);
+  transform: translate(calc(var(--input-length) + 0.5rem), 1.5rem);
+}
+
+input:user-valid {
+  &::before {
+    content: '✓';
+    position: absolute;
+    background-color: red;
+  }
+}
+
+:user-invalid {
+  outline: var(--error-color) solid 2px;
+}
+
+fieldset:user-valid {
+  background-color: green;
+}
+
+/* label:has(input:user-invalid)::after {
+  content: attr(data-error);
+  color: red;
+  font-weight: bold;
+} */
+
+label:has(input:user-invalid)::before,
+label:has(input:user-invalid)::after {
+  content: attr(data-error);
+  border: 1px solid var(--error-color);
+  background-color: var(--error-color-lighter);
+  color: var(--error-color-darker);
+  margin-top: 0.2rem;
+  padding: 0.5rem 1%;
+}
+
+label:has(input:user-invalid)::after {
+  display: none;
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 500px) {
+  label:has(input:user-invalid)::before {
+    display: none;
+    margin-bottom: 0.2rem;
+  }
+
+  label:has(input:user-invalid)::after {
+    display: block;
+  }
+}
