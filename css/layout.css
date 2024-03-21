@@ -11,13 +11,15 @@ header img.logo {
 
 form,
 #begin {
-  margin: 12% 2% 10% 2%;
+  margin: 12% 2% 0 2%;
+  padding-bottom: 10%;
 }
 
 @media (min-width: 800px) {
   form,
   #begin {
-    margin: 12% 20% 10% 20%;
+    margin: 12% 20% 0 20%;
+    padding-bottom: 10%;
   }
 }
 
