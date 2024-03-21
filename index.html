@@ -13,19 +13,73 @@
         href="https://www.youtube.com/watch?v=Vp4yrFkiYmY"
         >Dit is een schoolproject en niet echt de belastingdienst.
       </a>
-      <h1 class="sr-only">Belastingdienst</h1>
       <img src="img/bld_logo.svg" alt="" class="logo" />
+    </header>
+    <main>
+      <div class="scrollbar"></div>
 
       <nav>
         <ol>
+          <li><a href="#begin">start</a></li>
           <li><a href="#vraag-1">1</a></li>
           <li><a href="#vraag-2">2</a></li>
           <!-- <li><a href="#vraag-3">3</a></li>
           <li><a href="#vraag-4">4</a></li> -->
         </ol>
       </nav>
-    </header>
-    <main>
+
+      <section id="begin">
+        <h1>Aangifte Erfbelasting</h1>
+        <p>Met dit formulier doet u de aangifte erfbelasting.</p>
+        <article>
+          <h3>Voor wie doet u deze aangifte?</h3>
+          <p>
+            U doet de aangifte erfbelasting voor alle partijen die iets krijgen
+            uit de nalatenschap van de overledene. In deze aangifte noemen wij
+            dit 'Verkrijgers'. Klik op het vraagteken voor meer informatie.
+          </p>
+          <details>
+            <summary>?</summary>
+            <p>
+              U doet aangifte erfbelasting voor alle personen of instellingen
+              die iets krijgen uit de nalatenschap van de overledene
+              (verkrijgers). Voor de erfbelasting zijn er 4 soorten verkrijgers:
+            </p>
+            <ul>
+              <li>
+                <b>Erfgenamen</b> <br />
+                Een erfgenaam is een persoon of instelling aan wie de overledene
+                (een deel van) de erfenis nalaat. Een erfgenaam erft (een deel
+                van) de hele nalatenschap, dat zijn dus de bezittingen maar ook
+                de schulden.
+              </li>
+              <li>
+                <b>Legatarissen</b> <br />
+                Een legataris is een persoon of instelling die een specifiek
+                bedrag of voorwerp uit de nalatenschap krijgt, bijvoorbeeld een
+                meubelstuk, een auto, sieraden of een som geld. Dit staat in een
+                testament of een door de overledene geschreven codicil.
+              </li>
+              <li>
+                <b>Legitimarissen</b> <br />
+                Een legitimaris is een (klein)kind dat volgens de wet recht
+                heeft op een deel van de erfenis (de legitieme portie). Een
+                legitimaris kan altijd een beroep doen op die legitieme portie,
+                ook al had de overledene een testament
+              </li>
+              <li>
+                <b>Overige personen of instellingen die iets krijgen</b> <br />
+                Dit zijn personen of instellingen die iets krijgen uit de
+                nalatenschap op grond van
+                <a
+                  href="https://www.belastingdienst.nl/data/online_aangifte/erf2024/meer_info/wat_zijn_fictiebepalingen.htm"
+                  >fictiebepalingen</a
+                >. Dit hoeven dus geen erfgenamen of legatarissen te zijn.
+              </li>
+            </ul>
+          </details>
+        </article>
+      </section>
       <form action="#">
         <fieldset class="hele-vraag" id="vraag-1">
           <legend>1</legend>
@@ -37,14 +91,15 @@
             <legend>1a</legend>
             <label data-error="Dit veld is verplicht." for="1a-1-1">
               Voorletter(s)
-              <input type="text" id="1a-1-1" required />
+              <input type="text" id="1a-1-1" data-required="true" required />
             </label>
             <label for="1a-1-2"
               >Tussen- voegsel(s)
               <input type="text" id="1a-1-2" />
             </label>
             <label data-error="Dit veld is verplicht." for="1a-1-3">
-              Achternaam <input type="text" id="1a-1-3" required />
+              Achternaam
+              <input type="text" id="1a-1-3" data-required="true" required />
             </label>
             <label
               data-error="Vul een geldig burgerservicenummer in van 8 of 9 cijfers."
@@ -55,7 +110,7 @@
             <span value="data-error-message"> </span>
             <label data-error="Dit veld is verplicht." for="1a-3">
               Overlijdensdatum
-              <input type="date" id="1a-3" required />
+              <input type="date" id="1a-3" data-required="true" required />
             </label>
           </fieldset>
 
@@ -185,7 +240,8 @@
                 <input type="number" id="1d-2" />
               </label>
               <label data-error="Dit veld is verplicht." for="1a-1-1"
-                >Voorletter(s) <input type="text" id="1a-1-1" required />
+                >Voorletter(s)
+                <input type="text" id="1a-1-1" data-required="true" required />
               </label>
               <label for="1a-1-2"
                 >Tussen- voegsel(s) <input type="text" id="1a-1-2" />
@@ -193,7 +249,13 @@
 
               <div>
                 <label data-error="Dit veld is verplicht." for="1a-1-3"
-                  >Achternaam <input type="text" id="1a-1-3" required />
+                  >Achternaam
+                  <input
+                    type="text"
+                    id="1a-1-3"
+                    data-required="true"
+                    required
+                  />
                 </label>
               </div>
 
@@ -207,7 +269,6 @@
               </label>
             </div>
           </fieldset>
-          <button onclick="saveFormData()">Opslaan</button>
         </fieldset>
 
         <fieldset class="hele-vraag" id="vraag-2">
@@ -266,7 +327,8 @@
           <fieldset>
             <legend>2b</legend>
             <label data-error="Dit veld is verplicht." for="1a-1-1"
-              >Voorletter(s) <input type="text" id="1a-1-1" required />
+              >Voorletter(s)
+              <input type="text" id="1a-1-1" data-required="true" required />
             </label>
             <label for="1a-1-2"
               >Tussen- voegsel(s) <input type="text" id="1a-1-2" />
@@ -274,7 +336,8 @@
 
             <div>
               <label data-error="Dit veld is verplicht." for="1a-1-3"
-                >Achternaam <input type="text" id="1a-1-3" required />
+                >Achternaam
+                <input type="text" id="1a-1-3" data-required="true" required />
               </label>
             </div>
 
@@ -383,7 +446,6 @@
               E-mailadres <input type="email" id="2b-9" />
             </label>
           </fieldset>
-          <button onclick="saveFormData()">Opslaan</button>
         </fieldset>
 
         <!-- <fieldset class="hele-vraag" id="vraag-3">
@@ -478,7 +540,7 @@
             </div>
           </fieldset> 
         </fieldset>-->
-        <button type="submit" class="hidden button">Verstuur</button>
+        <button type="submit">Verstuur</button>
       </form>
     </main>
 

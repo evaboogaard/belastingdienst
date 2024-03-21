@@ -1,0 +1,100 @@
+#buttons {
+  display: flex;
+  padding: 5%;
+  gap: 1rem;
+}
+
+form > button {
+  width: 90%;
+  margin: 5%;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--button-primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: var(--font-size-base);
+  font-family: 'rijksoverheid', sans-serif;
+  transition: var(--transition-base);
+}
+
+button:focus,
+button:hover {
+  outline: 5px double var(--primary-color);
+  outline-offset: 2px;
+  opacity: 0.8;
+}
+
+label:has(input[type='radio'])::before {
+  content: '';
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border: 1px solid black;
+}
+
+label:has(input[type='radio']:checked)::before {
+  background-color: var(--primary-color);
+}
+
+input[type='file'] {
+  padding: 0.3rem;
+  border: none;
+  width: 40ch;
+}
+
+details {
+  background-color: white;
+}
+
+summary {
+  list-style: none;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+
+  width: 1.5em;
+  aspect-ratio: 1;
+  line-height: 1.5em;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+details ul {
+  list-style: inside;
+}
+
+details ul li,
+details p {
+  margin: 0.5rem 0;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scrollbar {
+    animation: adjust-progress-bar;
+    animation-timeline: scroll(root);
+    animation-duration: auto;
+    background-color: var(--secondary-color);
+    border-bottom: 3px solid var(--primary-color);
+    position: fixed;
+    height: 0.5rem;
+    width: 100vw;
+    transform-origin: left;
+    top: 0;
+    z-index: 2000;
+  }
+
+  @keyframes adjust-progress-bar {
+    0% {
+      transform: scaleX(0);
+    }
+
+    100% {
+      transform: scaleX(1);
+    }
+  }
+}

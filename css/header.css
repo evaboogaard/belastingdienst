@@ -1,10 +1,10 @@
 header {
   height: fit-content;
   background-color: white;
+}
 
-  img.logo {
-    width: 15rem;
-    position: relative;
-    left: calc(50% - 2.5rem);
-  }
+header img.logo {
+  width: 15rem;
+  position: relative;
+  left: calc(50% - 2.5rem);
 }
