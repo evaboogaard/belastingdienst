@@ -1,5 +1,29 @@
-form {
+header {
+  height: fit-content;
+  background-color: white;
+}
+
+header img.logo {
+  width: 15rem;
+  position: relative;
+  left: calc(50% - 2.5rem);
+}
+
+form,
+#begin {
   margin: 12% 2% 10% 2%;
+}
+
+@media (min-width: 800px) {
+  form,
+  #begin {
+    margin: 12% 20% 10% 20%;
+  }
+}
+
+fieldset,
+section {
+  position: relative;
 }
 
 nav {
@@ -42,7 +66,6 @@ nav ol li a:hover {
 }
 
 #begin {
-  margin: 12% 2% 10% 2%;
   padding: 5%;
   background-color: white;
   display: flex;
@@ -53,15 +76,23 @@ nav ol li a:hover {
 label:not(:has(input[type='radio'])) {
   display: flex;
   flex-direction: column;
+  position: relative;
+  width: 100%;
   max-width: var(--input-length);
 }
 
-label:has(input[type='radio']) {
+label {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: start;
   cursor: pointer;
   gap: 1rem;
+}
+
+@supports selector(:has(*)) {
+  label:has(input[type='radio']) {
+    flex-direction: row;
+  }
 }
 
 label:has(input[type='radio']),
@@ -93,34 +124,37 @@ div {
 /* hele vraag */
 .hele-vraag {
   border: 0;
-  padding: 5%;
+  padding: 15% 5% 5% 5%;
+  background-color: white;
+}
 
-  > legend {
-    display: flex;
-    justify-content: center;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    font-size: var(--font-size-bigger);
-    width: 2.2rem;
-    height: 2.2rem;
-    transform: translateY(40%);
-  }
+.hele-vraag > legend {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  font-size: var(--font-size-bigger);
+  width: 2.2rem;
+  height: 2.2rem;
+  transform: translateY(100%);
+}
 
-  > fieldset {
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
-    border-top: 3px inset var(--tertiary-color);
-    border-radius: 0.3rem;
+.hele-vraag > fieldset,
+div > fieldset {
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-top: 3px inset var(--tertiary-color);
+  border-radius: 0.3rem;
+}
 
-    > legend {
-      margin-left: 1rem;
-      padding-inline: 0.25rem;
-      font-weight: bold;
-      font-size: var(--font-size-big);
-    }
-  }
+.hele-vraag > fieldset > legend,
+div > fieldset > legend {
+  margin-left: 1rem;
+  padding-inline: 0.25rem;
+  font-weight: bold;
+  font-size: var(--font-size-big);
 }
 
 .name {
@@ -129,14 +163,19 @@ div {
   }
 }
 
+.verkrijger {
+  background-color: var(--background-color);
+  padding: 2rem 1rem;
+}
+
 .address input[type='number'] {
   width: 5rem;
 }
 
-.order-1 {
-  order: -1;
+.uppercase {
+  text-transform: uppercase;
 }
 
-#2b-5-1 {
-  text-transform: uppercase;
+.short-field {
+  width: calc(var(--input-length) * 0.5);
 }

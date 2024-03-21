@@ -1,3 +1,5 @@
+/* buttons */
+
 #buttons {
   display: flex;
   padding: 5%;
@@ -16,28 +18,33 @@ button {
   border: none;
   padding: 1rem 2rem;
   font-size: var(--font-size-base);
-  font-family: 'rijksoverheid', sans-serif;
+  font-family: 'rijksoverheid', Verdana, Tahoma, sans-serif;
   transition: var(--transition-base);
 }
 
 button:focus,
-button:hover {
+button:hover,
+a:focus,
+a:hover {
   outline: 5px double var(--primary-color);
   outline-offset: 2px;
   opacity: 0.8;
 }
 
-label:has(input[type='radio'])::before {
-  content: '';
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  background-color: white;
-  border: 1px solid black;
-}
+/* radio button styling */
+@supports selector(:has(*)) {
+  label:has(input[type='radio'])::before {
+    content: '';
+    display: block;
+    min-width: 1rem;
+    height: 1rem;
+    background-color: white;
+    border: 1px solid black;
+  }
 
-label:has(input[type='radio']:checked)::before {
-  background-color: var(--primary-color);
+  label:has(input[type='radio']:checked)::before {
+    background-color: var(--primary-color);
+  }
 }
 
 input[type='file'] {
@@ -46,22 +53,67 @@ input[type='file'] {
   width: 40ch;
 }
 
-details {
-  background-color: white;
+/* details and summary for information btns */
+details[open] {
+  background-color: var(--tertiary-color);
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
 summary {
+  position: absolute;
+  right: 0;
+  top: 0;
   list-style: none;
   font-weight: bold;
   cursor: pointer;
   background-color: var(--primary-color);
   color: white;
-
-  width: 1.5em;
+  width: 1.5rem;
   aspect-ratio: 1;
   line-height: 1.5em;
   text-align: center;
   margin: 1rem 0;
+  transition: var(--transition-base);
+}
+
+#begin summary {
+  top: 5.7rem;
+  right: 5%;
+}
+
+@media (min-width: 800px) {
+  #begin summary {
+    top: 7rem;
+  }
+}
+
+label summary {
+  right: -3rem;
+  top: 1.5rem;
+}
+
+label details {
+  width: 80vw;
+}
+
+@media (min-width: 800px) {
+  label details {
+    width: 50vw;
+  }
+}
+
+summary:focus,
+summary:hover {
+  outline: 5px double var(--primary-color);
+  outline-offset: 2px;
+  opacity: 0.8;
+  background-color: var(--secondary-color);
+}
+
+details[open] summary {
+  background-color: var(--secondary-color);
+  outline: 2px solid var(--primary-color);
 }
 
 details ul {
@@ -72,6 +124,14 @@ details ul li,
 details p {
   margin: 0.5rem 0;
 }
+
+details p strong {
+  font-size: var(--font-size-big);
+  display: block;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+}
+
+/* little scroll bar shenanigans */
 
 @supports (animation-timeline: scroll()) {
   .scrollbar {
@@ -97,4 +157,19 @@ details p {
       transform: scaleX(1);
     }
   }
+}
+
+/* dit is niks hoor */
+
+#geen_zorgen_ik_zou_liever_dood_gaan_dan_bij_de_belastingdienst_werken {
+  background-color: rgb(255, 207, 207);
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  transition: var(--transition-base);
+}
+
+#geen_zorgen_ik_zou_liever_dood_gaan_dan_bij_de_belastingdienst_werken:hover {
+  opacity: 0.6;
+  text-decoration: underline;
 }

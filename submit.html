@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/submit.css" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <title>Verzonden</title>
+  </head>
+  <body>
+    <h1>Uw document is verstuurd</h1>
+
+    <div>
+      <!-- hoofd -->
+      <span>
+        <!-- hoed -->
+        <span></span>
+        <!-- oogjes -->
+        <span></span>
+        <!-- wortel -->
+        <span></span>
+      </span>
+      <!-- lichaam boven -->
+      <span>
+        <!-- arm -->
+        <span>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
+                              <div></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </span>
+
+        <span>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
+                              <div></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </span>
+      </span>
+
+      <!-- lichaam onder -->
+      <span></span>
+    </div>
+
+    <svg>
+      <defs>
+        <filter id="blobby">
+          <!-- eerst een grote blur -->
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+
+          <!-- dan 'contrast' van alpha channel vergroten -->
+          <feColorMatrix
+            mode="matrix"
+            values="
+                                   1  0  0  0  0
+                                   0  1  0  0  0
+                                   0  0  1  0  0
+                                   0  0  0  100  -48"
+            result="blob"
+          />
+
+          <!-- de blur mixen met de oorspronkelijke vorm -->
+          <!-- 				<feBlend in="SourceGraphic" in2="blob" /> -->
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>

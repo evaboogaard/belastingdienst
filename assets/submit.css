@@ -1,0 +1,230 @@
+@property --angle1 {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --angle2 {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+h1 {
+  transform: translateY(-5rem);
+  font-family: fantasy;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+}
+
+body {
+  /* sneeuwpopje */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  background-image: repeating-conic-gradient(
+      in oklch from var(--angle1, 0deg),
+      transparent 0deg 10deg,
+      dodgerblue 10deg 20deg,
+      transparent 20deg 30deg
+    ),
+    repeating-conic-gradient(
+      in oklch from var(--angle2, 0deg),
+      transparent 0deg 10deg,
+      seagreen 10deg 20deg,
+      transparent 20deg 30deg
+    );
+
+  background-blend-mode: screen;
+
+  animation: sunshine 30s infinite linear;
+
+  > div {
+    position: relative;
+    height: 6rem;
+    aspect-ratio: 1/2.5;
+    bottom: -3.5rem;
+    transform-style: preserve-3d;
+    scale: 2;
+    animation: niet-dit-toch 1s infinite ease-in-out alternate;
+
+    > span {
+      background-color: white;
+      position: absolute;
+      border-radius: 50%;
+      aspect-ratio: 1;
+    }
+
+    > span:first-of-type {
+      width: 80%;
+      left: 10%;
+      top: 0.5rem;
+
+      /* hoed */
+      > span:first-of-type {
+        position: absolute;
+        width: 110%;
+        height: 2rem;
+        left: -2.5%;
+        top: -1.5rem;
+        rotate: 5deg;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+        }
+
+        &::before {
+          width: 100%;
+          height: 0.1rem;
+          bottom: 0;
+          border-radius: 1rem;
+          background-color: black;
+        }
+
+        &::after {
+          height: calc(100% - 0.05rem);
+          width: 82%;
+          left: 11%;
+          border-radius: 0.1rem 0.1rem 0 0;
+          background-image: radial-gradient(
+            circle at top left in oklch,
+            rgb(88, 169, 231),
+            black
+          );
+        }
+      }
+
+      /* oogjes */
+      > span:nth-of-type(2) {
+        position: absolute;
+        width: 55%;
+        left: 10%;
+        top: 0.75rem;
+        aspect-ratio: 3 / 1;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          background: radial-gradient(
+            circle at 20%,
+            white 0 15%,
+            black 15% 100%
+          );
+          border-radius: 50%;
+          aspect-ratio: 1;
+          width: 0.3rem;
+          rotate: 40deg;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+
+      /* wortel */
+      > span:nth-of-type(3) {
+        position: absolute;
+        width: 2.5rem;
+        aspect-ratio: 1;
+        background: conic-gradient(
+          transparent 20%,
+          orange 20% 25%,
+          transparent 25%
+        );
+        top: 0.2rem;
+        left: -1.8rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          background-color: orange;
+          width: 0.4rem;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          left: 2.3rem;
+          top: 0.83rem;
+        }
+      }
+    }
+
+    > span:nth-of-type(2) {
+      width: 90%;
+      left: 5%;
+      bottom: 1.8rem;
+      z-index: 500;
+      transform-style: preserve-3d;
+
+      > span:first-of-type,
+      > span:nth-of-type(2) {
+        position: absolute;
+        top: 0.5rem;
+        filter: url('#blobby');
+
+        div {
+          --arm-color: rgb(86, 49, 22);
+          width: 5px;
+          height: 5px;
+          background-color: saddlebrown;
+          border-radius: 50%;
+          animation: schwing 1s alternate infinite ease-in-out;
+        }
+      }
+
+      > span:first-of-type {
+        left: 1.1rem;
+        transform: translateZ(5rem);
+      }
+
+      > span:nth-of-type(2) {
+        left: 0.5rem;
+        top: 0.3rem;
+        rotate: 20deg;
+        transform: translateZ(-5rem);
+
+        div {
+          animation-direction: alternate-reverse;
+        }
+      }
+    }
+
+    > span:nth-of-type(3) {
+      width: 100%;
+      bottom: 0;
+      transform: translateZ(1rem);
+    }
+  }
+}
+
+@keyframes schwing {
+  from {
+    transform: translateY(4px) translateX(-2px) rotate(3deg);
+  }
+  to {
+    transform: translateY(4px) translateX(2px) rotate(-3deg);
+  }
+}
+
+@keyframes sunshine {
+  0% {
+    --angle1: 0deg;
+    --angle2: 0deg;
+  }
+
+  100% {
+    --angle1: 360deg;
+    --angle2: -360deg;
+  }
+}
+
+@keyframes niet-dit-toch {
+  to {
+    padding: 1rem;
+  }
+}

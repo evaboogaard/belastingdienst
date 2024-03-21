@@ -1,11 +1,19 @@
+/* show/hide */
+
 .hideable {
-  display: block;
+  display: flex;
 }
 
-label:has(.vervolg:not(:checked)) ~ .hideable {
-  display: none;
+@supports selector(:has(*)) {
+  label:has(.vervolg:not(:checked)) ~ .hideable {
+    display: none;
+  }
 }
 
-.remove {
-  display: none;
+/* remove the 'ga naar vraag huppeldepup' when css is active & supports :has */
+
+@supports selector(:has(*)) {
+  .remove {
+    display: none;
+  }
 }

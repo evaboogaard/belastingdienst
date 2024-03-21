@@ -46,7 +46,8 @@
   --error-color: #ffa500;
   --error-color-lighter: #ffa60021;
   --error-color-darker: #715219;
-  --valid-color: green;
+  --valid-color: #59cd59;
+  --valid-color-darker: #3aa43a;
 
   --font-size-base: 1rem;
   --font-size-small: 0.9rem;
@@ -73,11 +74,12 @@ body {
 
 main {
   background-color: var(--background-color);
-  padding-top: 0.5rem;
 }
 
 form {
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 fieldset {
@@ -91,15 +93,23 @@ fieldset {
 a {
   text-decoration: none;
   color: black;
+  transition: var(--transition-base);
 }
 
-input[type='radio'] {
-  opacity: 0;
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+a.looklikelink {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+@supports selector(:has(*)) {
+  input[type='radio'] {
+    opacity: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
 }
 
 label:has(input[type='radio']:focus)::before {
@@ -121,18 +131,6 @@ input:not([type='radio']) {
   }
 }
 
-/* https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type='number'] {
-  appearance: textfield;
-  -moz-appearance: textfield;
-}
-
 h2 {
   font-size: var(--font-size-h2);
   padding-bottom: 1rem;
@@ -141,17 +139,4 @@ h2 {
 h3 {
   font-size: var(--font-size-h3);
   padding-bottom: 1rem;
-}
-
-#geen_zorgen_ik_zou_liever_dood_gaan_dan_bij_de_belastingdienst_werken {
-  background-color: rgb(255, 207, 207);
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0;
-  transition: var(--transition-base);
-}
-
-#geen_zorgen_ik_zou_liever_dood_gaan_dan_bij_de_belastingdienst_werken:hover {
-  opacity: 0.6;
-  text-decoration: underline;
 }
