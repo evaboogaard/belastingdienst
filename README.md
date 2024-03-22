@@ -85,6 +85,7 @@ uiteindelijk was het zelfs ook nog best leuk om een beetje te puzzelen met versc
 - https://wordpress.com/forums/topic/how-to-open-custom-html-link-to-open-in-new-tab/#:~:text=You%20can%20make%20a%20HTML,this%20after%20the%20link%20address.
 - https://www.w3schools.com/html/html_favicon.asp
 - https://www.belastingdienst.nl/wps/wcm/connect/nl/home/home
+- https://stackoverflow.com/questions/40974745/how-do-i-make-submit-button-redirect-to-another-page
 
 - chatgpt <3 ik heb hem dit allemaal gevraagd en soms was het echt onzin en soms redde hij mijn nekje:
 

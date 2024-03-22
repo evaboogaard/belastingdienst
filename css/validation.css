@@ -34,21 +34,25 @@ label:has(input.error-message)::after {
   border: 1px solid var(--error-color);
   background-color: var(--error-color-lighter);
   color: var(--error-color-darker);
-  transform: translateY(-1rem);
   padding: 0.5rem 5%;
 }
 
 label:has(input:user-invalid)::after,
 label:has(input.error-message)::after {
+  transform: translateY(-0.5rem);
   display: none;
-  margin-top: 0.2rem;
+}
+
+label:has(input:user-invalid)::before,
+label:has(input.error-message)::before {
+  display: block;
+  transform: translateY(0.5rem);
 }
 
 @media (min-width: 500px) {
   label:has(input:user-invalid)::before,
   label:has(input.error-message)::before {
     display: none;
-    margin-bottom: 0.2rem;
   }
 
   label:has(input:user-invalid)::after,
