@@ -9,7 +9,9 @@
   inherits: false;
   initial-value: 0deg;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 h1 {
   transform: translateY(-5rem);
   font-family: fantasy;
@@ -25,6 +27,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
+  scroll-behavior: smooth;
 
   background-image: repeating-conic-gradient(
       in oklch from var(--angle1, 0deg),

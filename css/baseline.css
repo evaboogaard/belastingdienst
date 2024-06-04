@@ -68,6 +68,10 @@
   --input-length: 30ch;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'rijksoverheid', sans-serif;
 }
@@ -88,6 +92,7 @@ fieldset {
   border: 0;
   gap: 1rem;
   padding: 1rem 0;
+  scroll-margin-block-start: 8em;
 }
 
 a {

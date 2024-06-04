@@ -34,7 +34,7 @@ label:has(input.error-message)::after {
   border: 1px solid var(--error-color);
   background-color: var(--error-color-lighter);
   color: var(--error-color-darker);
-  padding: 0.5rem 5%;
+  padding: 0.5rem 5%; 
 }
 
 label:has(input:user-invalid)::after,
